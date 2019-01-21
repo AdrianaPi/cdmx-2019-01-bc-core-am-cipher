@@ -1,53 +1,32 @@
 window.cipher = {
     encode: (offset, string) => {
-        let mensajeInicial = " ";
-        let cadena;
-        // Recorrer mensaje
-        let i;
-        for (i=0; i<string.length; i++) {
-            //console.log (string.charAt(i))
+        let mensajeInicial = "";
         
-        //Conocer ASCII 
+        for (let i=0; i<string.length; i++) {
+            
             let msjAsc = (string.charCodeAt(i));
-            //console.log (msjAsc); 
-    
-        //Aplicar fórmula para codificar
-           let cesarCod = ((msjAsc-65+offset)%26+65);
-           //console.log (cesarCod);
-    
-        //Retornar cadena con la fórmula 
-          cadena=(String.fromCharCode (cesarCod));
-          //console.log (cadena);
 
-       //Convertir cadena a texto alineado 
-          mensajeInicial +=cadena;
-          // console.log (mensajeInicial)
-            }
+            let cesarCod = ((msjAsc-65+offset)%26+65);
+
+            let cadena=(String.fromCharCode (cesarCod));
+
+            mensajeInicial +=cadena;
+        }
+        return mensajeInicial;
     },
     decode: (offset, string) => {
-        let mensajeInicial = " ";
-        let cadena;
-        let i;
-        for (i=0; i<string.length; i++) {
-            //console.log (string.charAt(i))
+        let mensajeInit = "";
         
-        //Conocer ASCII 
-            let msjAsc = (string.charCodeAt(i));
-            //console.log (msjAsc); 
+        for (let i=0; i<string.length; i++) {
+         
+            let msjAsc = (string.charCodeAt(i)); 
     
-        //Aplicar fórmula para codificar
-           let cesarCod = ((msjAsc-65+offset)%26+65);
-           //console.log (cesarCod);
+            let cesarCod = ((msjAsc-65-offset+26*2)%26+65);
     
-        //Retornar cadena con la fórmula 
-          cadena=(String.fromCharCode (cesarCod));
-          //console.log (cadena);
-
-       //Convertir cadena a texto alineado 
-          mensajeInicial +=cadena;
-          // console.log (mensajeInicial)
-            }
-
+            let cadena=(String.fromCharCode (cesarCod));
+        
+            mensajeInit +=cadena;
+        }
+        return mensajeInit;
     }
-
 };
