@@ -1,24 +1,22 @@
-
 // Traer elementos HTML
-const codificar = document.getElementById("codificar");
-const clave = document.getElementById("clave");
-const btnencrip = document.getElementById("btnencrip");
-const btncrypto = document.getElementById("btncrypto");
-
+const ciec = document.getElementById("ciec");
+const llave = document.getElementById("llave");
+const btncifrar = document.getElementById("btncifrar");
+const btndecifrar = document.getElementById("btndecifrar");
 
 // agregar evento
-btnencrip.addEventListener("click", () => {
-    let string = codificar.value;
-    let offset = clave.value;
-    let msjFinal= window.cipher.encode (offset, string);
-    document.getElementById('resultado').value= msjFinal;
-   
+btncifrar.addEventListener("click", () => {
+    let string = ciec.value;
+    let offset = parseInt(llave.value);
+    let msjFinal = window.cipher.encode (offset, string);
+    document.getElementById('datos').innerHTML= msjFinal;
 });
 
-btncrypto.addEventListener("click", () => {
-    let string = codificar.value;
-    let offset = clave.value;
+btndecifrar.addEventListener("click", () => {
+    let string = ciec.value;
+    let offset = parseInt(llave.value);
     let msjDecod= window.cipher.decode (offset, string);
-    document.getElementById('resultado').value= msjDecod;
-   
+    document.getElementById('datos').innerHTML= msjDecod;
 });
+
+

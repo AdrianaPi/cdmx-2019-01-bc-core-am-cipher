@@ -4,29 +4,56 @@
     <meta charset="utf-8">
     <title>Caesar Cipher</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
   </head>
   <body>
-  
-    <div>
-    <h1>Mensaje César</h1>
-    <input type="text" name="codificar" id="codificar" placeholder="Escribe tu mensaje" title="escribe tu mensaje">
-    <br>
-    <br>
-        <input id = "clave" type= "number" placeholder="Ej. 1" title= "Clave" name="Clave">
-        <button id = "btnencrip">Codificar</button>
-        <button id = "btncrypto">Decodificar</button>
-        <br>
-        <br>
-        <input type="text" name="decodificar" id="resultado"  placeholder="Lee tu mensaje" title="lee tu mensaje">
-        <br>
-        <br>
-        <button id = "enviar">Enviar</button>
-        <button type ="reset" id= "limpiar" value="borrar">Limpiar</button>
-     </div>
+    <header>
+      <div>
+        <h1>Guardatos SAT</h1>
+      </div>
+    </header>
 
+    <aside>
+      <p>Mantén tus datos a salvo y listos para usar en los trámites.</p>
+      <p>Instrucciones:
+        1. Introduce tu CIEC.
+        2. Elige un número para cifrar y escríbelo en la llave.
+        3. Selecciona la opción codificar.
+        4. Lee tu mensaje y copíalo.
+      </p>
+      </aside>
     
+    <main>
+        <form action="mailto:poneaquí@tuemail?" subject="asunto" enctype="text/plain" method="post">
+          <div>
+              <label for="ciec">CIEC:</label>
+              <input type="text" id="ciec" />
+          </div>
+          <div>
+            <label for="llave">Llave:</label>
+            <input type="number" id="llave" />
+          </div>
 
+          <div class="button">
+              <button type="button" id="btncifrar">Cifrar</button>
+          </div>
+
+          <div class="button">
+               <button type="button" id="btndecifrar">Decifrar</button>
+          </div>
+          <div>
+              <label for="datos">Tus datos son:</label>
+              <textarea id="datos"></textarea>
+          </div>
+          
+          <div class="button">
+              <button type="submit" value="send">Envíar</button>
+          </div>
+      </form>
+    </main>
+     
     <script src="cipher.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
+
