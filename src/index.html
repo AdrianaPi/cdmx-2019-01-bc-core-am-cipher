@@ -8,49 +8,59 @@
   </head>
   <body>
     <header>
-      <div>
-        <h1>Guardatos SAT</h1>
-      </div>
+        <hgroup class="titulo">
+            <img src="img/ekoomi.png">
+            <h1>Guardatos SAT</h1>
+            <hr>
+            <h3>Mantén tus datos a salvo y listos para usar en los trámites</h3>
+        </hgroup>
     </header>
 
-    <aside>
-      <p>Mantén tus datos a salvo y listos para usar en los trámites.</p>
-      <p>Instrucciones:
-        1. Introduce tu CIEC.
-        2. Elige un número para cifrar y escríbelo en la llave.
-        3. Selecciona la opción codificar.
-        4. Lee tu mensaje y copíalo.
-      </p>
-      </aside>
+    <aside class="instrucciones">
+        <div class="rules">
+            <p>Instrucciones:</p>
+                <p>1. Introduce tu CIEC (Clave de Identificación <br>Electrónica Confidencial).
+                <br>
+                2. Elige un número para cifrar y escríbelo en la llave.
+                <br>
+                3. Selecciona la opción de tu preferencia.
+                <br>
+                4.Envía.
+               </p>
+            </div>
+    </aside>
     
-    <main>
+    <main class="cesar">
         <form action="mailto:poneaquí@tuemail?" subject="asunto" enctype="text/plain" method="post">
-          <div>
-              <label for="ciec">CIEC:</label>
-              <input type="text" id="ciec" />
-          </div>
-          <div>
+          
+            <label for="ciec">CIEC:</label>
+            <input type="text" id="ciec" size="40cm" />
+          
             <label for="llave">Llave:</label>
-            <input type="number" id="llave" />
+            <input type="number" id="llave"/>
+          
+
+          <div class="button">
+              <button type="button" id="btncifrar"><img src="img/candado.png"><br>Cifrar</button>
           </div>
 
           <div class="button">
-              <button type="button" id="btncifrar">Cifrar</button>
+               <button type="button" id="btndecifrar"><img src="img/abierto.png"><br>Decifrar</button>
           </div>
 
-          <div class="button">
-               <button type="button" id="btndecifrar">Decifrar</button>
-          </div>
-          <div>
               <label for="datos">Tus datos son:</label>
               <textarea id="datos"></textarea>
-          </div>
           
-          <div class="button">
               <button type="submit" value="send">Envíar</button>
-          </div>
       </form>
     </main>
+
+    <footer class="acerca">
+      <div class="about">
+        <p>Acerca de</p>
+        <p>Utilizamos el Cifrado César, uno de los métodos de codificación más antiguos. Es muy simple, sólo se cambian las posiciones del alfabeto.</p>
+      </div>
+    </footer>
      
     <script src="cipher.js"></script>
     <script src="index.js"></script>
